@@ -17,23 +17,11 @@ fn main() {
     let mut host = DummyHost::new(Env::default());
     let mut intrp = Interpreter::new(contract, u64::MAX, true);
 
-    println!(
-        "{:?}, aligned: {}",
-        intrp.instruction_pointer,
-        (intrp.instruction_pointer as u64) % 8 == 0
-    );
+    println!("{:?}", intrp.instruction_pointer);
     stack::push::<1>(&mut intrp, &mut host);
-    println!(
-        "{:?}, aligned: {}",
-        intrp.instruction_pointer,
-        (intrp.instruction_pointer as u64) % 8 == 0
-    );
+    println!("{:?}", intrp.instruction_pointer);
     stack::push::<1>(&mut intrp, &mut host);
-    println!(
-        "{:?}, aligned: {}",
-        intrp.instruction_pointer,
-        (intrp.instruction_pointer as u64) % 8 == 0
-    );
+    println!("{:?}", intrp.instruction_pointer);
     memory::mstore(&mut intrp, &mut host);
 
     println!("{:?}", intrp.instruction_result);
