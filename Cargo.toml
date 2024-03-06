@@ -1,0 +1,12 @@
+[package]
+name = "ub_repro"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+# revm-interpreter = {path = "/home/mio/web3fuzz/revm/crates/interpreter"}
+# revm-primitives = {path = "/home/mio/web3fuzz/revm/crates/primitives"}
+revm-interpreter = {git = "https://github.com/wtdcode/revm", branch = "ub"}
+revm-primitives = {git = "https://github.com/wtdcode/revm", branch = "ub"}
